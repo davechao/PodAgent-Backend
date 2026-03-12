@@ -1,15 +1,15 @@
 # PodAgent
 
-> AI 幫你「聽 Podcast → 整理摘要」，使用者不需要真的聽完整集。
+> AI 幫你「聽 Podcast → 整理摘要與重點」，使用者不需要真的聽完整集。
 
 ---
 
 ## ✨ 功能
-- 📡 輸入 RSS URL，自動列出Episodes
+- 📡 輸入 RSS URL，自動列出 Episode 列表資訊
 - ⬇️ 下載 MP3 音訊，並透過 FFmpeg 切段
 - 🎙️ Whisper STT 語音轉文字
 - 🗂️ 向量化後存入 Pinecone VectorStore
-- 🤖 LLM Agent 自動產生摘要與重點
+- 🤖 做 RAG Pipeline，再由 LLM 生成摘要與重點
 
 ---
 
@@ -53,7 +53,7 @@ RSS Feed URL
      ▼                                                           
 ┌─────────────────────┐                             
 │  RAG Pipeline       │                             
-│  LLM 產生摘要重點     │                             
+│  LLM 生成摘要重點     │                             
 └─────────────────────┘                             
      │                                               
      ▼
