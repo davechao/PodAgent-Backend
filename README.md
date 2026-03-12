@@ -20,7 +20,7 @@ RSS Feed URL
      │
      ▼
 ┌─────────────────────┐
-│   RSS Parser        │  取得 Episode 資訊
+│   RSS Parser        │  取得 Episode 列表資訊
 └─────────────────────┘
      │
      ▼
@@ -52,7 +52,7 @@ RSS Feed URL
      │                                                           
      ▼                                                           
 ┌─────────────────────┐                             
-│  LangChain Agent    │                             
+│  RAG Pipeline       │                             
 │  LLM 產生摘要重點     │                             
 └─────────────────────┘                             
      │                                               
