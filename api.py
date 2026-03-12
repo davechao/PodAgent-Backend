@@ -40,7 +40,7 @@ def api_analyze_episode(mp3_url: str):
         docs = whisper_stt_from_episode()
         save_to_pinecone(docs)
 
-        summary = run_agent("幫我整理這集Episode，列出重點與摘要")
+        summary = run_agent()
         return summary
 
     except Exception as e:

@@ -85,7 +85,7 @@ def get_podcast_info(rss_url: str):
 
 
 # --------------------------------
-#  下載 MP3 + FFMPeg 切段
+#  下載 MP3 + FFmpeg 切段
 # --------------------------------
 def download_and_split_mp3(mp3_url: str):
     episode_dir = TMP_DIR / f"episode"
@@ -175,16 +175,16 @@ def clear_pinecone():
 # ------------------------------------
 #  從 VectorStore Pinecone 查詢相似內容
 # ------------------------------------
-def get_episode_chunks(query: str, k: int = 50) -> list[str]:
-    docs = vectorstore.similarity_search(query=query, k=k)
+def get_episode_chunks(k: int = 50) -> list[str]:
+    docs = vectorstore.similarity_search(query=" ", k=k)
     return [doc.page_content for doc in docs]
 
 
 # ---------------------------
 #  Run Agent
 # ---------------------------
-def run_agent(query: str, k: int = 50):
-    docs = get_episode_chunks(query, k)
+def run_agent(k: int = 50):
+    docs = get_episode_chunks(k)
 
     prompt = f"""
 你是一個整理 Podcast Episode 的助手，請閱讀下列內容，產生摘要與重點，並回傳 JSON：
